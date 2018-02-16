@@ -15,7 +15,11 @@ RUN cd /var/www/html \
     && rm -f index.html \
     && git clone https://github.com/DanielnetoDotCom/YouPHPTube.git . \
     && pip install --upgrade pip \
-    && pip install youtube-dl
+    && pip install youtube-dl \
+    && mkdir /var/www/html/encoder \
+    && cd /var/www/html/encoder \
+    && git clone https://github.com/DanielnetoDotCom/YouPHPTube-Encoder.git . \
+    && cd /var/www/html
 
 ADD 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
